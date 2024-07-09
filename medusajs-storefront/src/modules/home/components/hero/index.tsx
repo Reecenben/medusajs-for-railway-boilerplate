@@ -11,13 +11,12 @@ const Hero = () => {
       }}
     >
       <div className="absolute inset-0 z-10 flex justify-center items-center">
-        <Button
-          as="a"
+        <a
           href="/store"
           className="bg-white text-black py-2 px-4 rounded"
         >
           Go to Store
-        </Button>
+        </a>
       </div>
     </div>
   );
