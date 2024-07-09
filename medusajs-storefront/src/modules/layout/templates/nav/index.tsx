@@ -1,13 +1,11 @@
-import { headers } from "next/headers"
-import { Suspense } from "react"
-
-import { listRegions } from "@lib/data"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CartButton from "@modules/layout/components/cart-button"
-import SideMenu from "@modules/layout/components/side-menu"
+import { Suspense } from "react";
+import { listRegions } from "@lib/data";
+import LocalizedClientLink from "@modules/common/components/localized-client-link";
+import CartButton from "@modules/layout/components/cart-button";
+import SideMenu from "@modules/layout/components/side-menu";
 
 export default async function Nav() {
-  const regions = await listRegions().then((regions) => regions)
+  const regions = await listRegions();
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
@@ -18,26 +16,21 @@ export default async function Nav() {
               <SideMenu regions={regions} />
             </div>
           </div>
-
-       <div className="h-full">
-    <LocalizedClientLink
-  href="/"
-  className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
-  style={{
-    width: '150px', // Adjust width and height as needed
-    height: '50px',
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)'
-  }}
->
-  <img src="https://res.cloudinary.com/dgitafnnb/image/upload/v1720498037/Shacket_Shack_mehgtl.png" alt="Shacket Shack Logo" />
-</LocalizedClientLink>
-  </div>
-
+          <div className="h-full relative flex-1 basis-0 flex justify-center items-center">
+            <LocalizedClientLink
+              href="/"
+              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+            >
+              <img
+                src="https://res.cloudinary.com/dgitafnnb/image/upload/v1720498037/Shacket_Shack_mehgtl.png"
+                alt="Shacket Shack Logo"
+                className="w-[150px] h-[50px] object-contain"
+              />
+            </LocalizedClientLink>
+          </div>
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
-              {process.env.FEATURE_SEARCH_ENABLED && (
+              {process.env.NEXT_PUBLIC_FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
                   className="hover:text-ui-fg-base"
                   href="/search"
@@ -69,5 +62,5 @@ export default async function Nav() {
         </nav>
       </header>
     </div>
-  )
+  );
 }
