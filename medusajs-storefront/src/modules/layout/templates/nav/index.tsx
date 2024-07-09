@@ -21,11 +21,18 @@ export default async function Nav() {
 
        <div className="h-full">
     <LocalizedClientLink
-      href="/"
-      className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
-    >
-      <img src="https://res.cloudinary.com/dgitafnnb/image/upload/v1720498037/Shacket_Shack_mehgtl.png" alt="Shacket Shack Logo" />
-    </LocalizedClientLink>
+  href="/"
+  className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+  style={{
+    width: '150px', // Adjust width and height as needed
+    height: '50px',
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)'
+  }}
+>
+  <img src="https://res.cloudinary.com/dgitafnnb/image/upload/v1720498037/Shacket_Shack_mehgtl.png" alt="Shacket Shack Logo" />
+</LocalizedClientLink>
   </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
