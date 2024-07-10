@@ -24,7 +24,7 @@ export default async function Nav() {
               <img
                 src="https://res.cloudinary.com/dgitafnnb/image/upload/v1720584086/Shacket_Shack_mehgtl_c_fill_w_450_h_100_g_auto_qou7qx.png"
                 alt="Shacket Shack Logo"
-                className="w-[450px] h-[100px] object-contain"
+                className="w-[350px] h-[75px] object-contain"
               />
             </LocalizedClientLink>
           </div>
